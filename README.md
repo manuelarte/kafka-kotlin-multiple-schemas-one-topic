@@ -20,5 +20,3 @@ You should see that two messages (with different avro schemas) have been sent an
 
 - https://www.confluent.io/blog/put-several-event-types-kafka-topic/
 - https://developer.confluent.io/courses/schema-registry/schema-subjects/
-
-- Explain how to check the subjects
