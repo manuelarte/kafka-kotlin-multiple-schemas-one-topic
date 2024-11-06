@@ -8,7 +8,7 @@ plugins {
 
 }
 // To autogenerate avro schema java classes
-// java -jar /Users/lv90no/Downloads/avro-tools-1.12.0.jar compile schema src/main/resources/schemas/iaas/new.avsc src/main/java/
+// java -jar ./lib/avro-tools-1.12.0.jar compile schema src/main/avro/User.avsc src/main/java/
 
 buildscript {
 	repositories {
@@ -22,7 +22,7 @@ buildscript {
 	}
 }
 
-group = "org.ing.p16411.sandbox"
+group = "com.github.manuelarte.kafka"
 version = "0.0.1-SNAPSHOT"
 
 java {
