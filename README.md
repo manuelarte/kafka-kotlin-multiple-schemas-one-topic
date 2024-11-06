@@ -1,0 +1,1 @@
+# kafka-kotlin-multiple-schemas-one-topic
