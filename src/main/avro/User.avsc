@@ -1,0 +1,48 @@
+[
+  {
+    "type": "record",
+    "namespace": "com.github.manuelarte.kafka.avro",
+    "name": "UserNew",
+    "doc": "New User",
+    "fields":[
+      {
+        "name": "id",
+        "type": "int",
+        "doc": "The id of the user"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "doc": "The name of a service instance"
+      },
+      {
+        "name": "username",
+        "type": "string",
+        "doc": "The username of the user"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "doc": "The email of the user"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "com.github.manuelarte.kafka.avro",
+    "name": "UserEmailUpdated",
+    "doc": "User updated his email",
+    "fields":[
+      {
+        "name": "id",
+        "type": "int",
+        "doc": "The id of the user"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "doc": "The new email of the user"
+      }
+    ]
+  }
+]
