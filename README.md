@@ -12,6 +12,7 @@ Run the command:
 This command run all the docker containers needed:
 - kafka
 - schema registry
+
 Plus the spring boot application with the profiles producer and consumer.
 
 You should see that two messages (with different avro schemas) have been sent and received on the same topic.
