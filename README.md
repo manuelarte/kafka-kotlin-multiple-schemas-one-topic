@@ -1,8 +1,9 @@
 # Example Of How To Send/Receive Different Avro Schemas In The Same Kafka Topic
 
 This project contains an example on how to use multiple [AVRO schemas](https://avro.apache.org/docs/1.11.1/specification/) in one Kafka Topic using:
-- Spring Boot ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
-- Kotlin ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
+- ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) Spring Boot
+- ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) Kotlin
+- ![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&logo=apachekafka) Apache Kafka
 
 ## How to Run
 
