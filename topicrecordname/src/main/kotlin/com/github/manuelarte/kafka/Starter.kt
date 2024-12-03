@@ -34,13 +34,19 @@ class StarterProducer(
     override fun start() {
         UserNew(1, "manuel", "manuelarte", "manuel@manuel.com").also {
             LOGGER.info("Sending new user: {}", it)
-            this.kafkaTemplate.send(this.userTopic, it)
+            val completeableFuture = this.kafkaTemplate.send(this.userTopic, it)
+            completeableFuture.thenApply { result ->
+                LOGGER.info("New User Sent: {}", result.producerRecord.value())
+            }
         }
 
 
         UserEmailUpdated(1, "manuel@example.com").also {
             LOGGER.info("Sending user email updated: {}", it)
-            this.kafkaTemplate.send(this.userTopic, it)
+            val completeableFuture1 = this.kafkaTemplate.send(this.userTopic, it)
+            completeableFuture1.thenApply { result ->
+                LOGGER.info("User Email Sent: {}", result.producerRecord.value())
+            }
         }
 
     }

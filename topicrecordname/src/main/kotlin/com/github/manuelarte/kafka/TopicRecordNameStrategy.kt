@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class KafkaKotlinMultipleSchemasOneTopicApplication(private val starter: Starter): CommandLineRunner {
+class TopicRecordNameStrategy(private val starter: Starter): CommandLineRunner {
 
 	private val LOGGER: Logger = LoggerFactory
-		.getLogger(KafkaKotlinMultipleSchemasOneTopicApplication::class.java)
+		.getLogger(TopicRecordNameStrategy::class.java)
 
 	override fun run(vararg args: String?) {
 		this.starter.start()
@@ -18,5 +18,5 @@ class KafkaKotlinMultipleSchemasOneTopicApplication(private val starter: Starter
 }
 
 fun main(args: Array<String>) {
-	runApplication<KafkaKotlinMultipleSchemasOneTopicApplication>(*args)
+	runApplication<TopicRecordNameStrategy>(*args)
 }
