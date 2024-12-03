@@ -1,7 +1,7 @@
 plugins {
-	kotlin("jvm") version "2.0.21"
-	kotlin("plugin.spring") version "2.0.21"
-	id("org.springframework.boot") version "3.3.5"
+	kotlin("jvm") version "2.1.0"
+	kotlin("plugin.spring") version "2.1.0"
+	id("org.springframework.boot") version "3.4.0"
 	id("io.spring.dependency-management") version "1.1.6"
 	//id("com.github.davidmc24.gradle.plugin.avro") version "1.9.1"
 	//id("com.github.imflog.kafka-schema-registry-gradle-plugin") version "2.1.1"
@@ -43,7 +43,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.kafka:spring-kafka")
 	implementation("org.apache.avro:avro:1.12.0")
-	implementation("io.confluent:kafka-avro-serializer:7.7.1")
+	implementation("io.confluent:kafka-avro-serializer:7.8.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
