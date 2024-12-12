@@ -29,15 +29,15 @@ Run the command:
 After the application is loaded, you should see that two messages (with **different avro schemas**) have been sent and received *on the same topic*.
 
 ```
-2024-11-18T19:30:59.290+01:00  INFO 6780 --- [kafka-kotlin] [           main] c.g.manuelarte.kafka.StarterProducer     : Sending new user: {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}
-2024-11-18T19:31:00.386+01:00  INFO 6780 --- [kafka-kotlin] [           main] c.g.manuelarte.kafka.StarterProducer     : Sending user email updated: {"id": 1, "email": "manuel@example.com"}
-2024-11-18T19:31:00.530+01:00  INFO 6780 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received new User message: {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}
-2024-11-18T19:31:00.548+01:00  INFO 6780 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received User email updated message: {"id": 1, "email": "manuel@example.com"}
+2024-11-18T19:30:59.290+01:00  INFO 6780 --- [kafka-kotlin] [           main] c.g.manuelarte.kafka.StarterProducer     : Sending UserRegistered: {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}
+2024-11-18T19:31:00.386+01:00  INFO 6780 --- [kafka-kotlin] [           main] c.g.manuelarte.kafka.StarterProducer     : Sending UserEmailUpdated: {"id": 1, "email": "manuel@example.com"}
+2024-11-18T19:31:00.530+01:00  INFO 6780 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received UserRegistered message: {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}
+2024-11-18T19:31:00.548+01:00  INFO 6780 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received UserEmailUpdated message: {"id": 1, "email": "manuel@example.com"}
 ```
 
 You can also check the schemas created in http://localhost:8081/subjects/, they should have the following pattern `<topic>-<fully qualified name>`:
-+ quickstart-events-com.github.manuelarte.kafka.avro.UserEmailUpdated
-+ quickstart-events-com.github.manuelarte.kafka.avro.UserNew
++ quickstart-events-com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent
++ quickstart-events-com.github.manuelarte.kafka.avro.UserRegisteredEvent
 
 ## One Avro Schema With A Field With The Union Of Different Events
 
@@ -59,10 +59,10 @@ This command run the spring boot application with the profiles `producer` and `c
 After the application is loaded, you should see that two messages (with **same avro schemas but different payload type**) have been sent and received *on the same topic*.
 
 ```
-2024-12-03T16:42:13.784+01:00  INFO 45015 --- [kafka-kotlin] [tlin-producer-1] c.g.manuelarte.kafka.StarterProducer     : New User Sent: {"payload": {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}}
-2024-12-03T16:42:13.784+01:00  INFO 45015 --- [kafka-kotlin] [tlin-producer-1] c.g.manuelarte.kafka.StarterProducer     : User Email Sent: {"payload": {"id": 1, "email": "manuel@example.com"}}
-2024-12-03T16:42:13.797+01:00  INFO 45015 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received User event: {"payload": {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}}
-2024-12-03T16:42:13.797+01:00  INFO 45015 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received User event: {"payload": {"id": 1, "email": "manuel@example.com"}}
+2024-12-03T16:42:13.784+01:00  INFO 45015 --- [kafka-kotlin] [tlin-producer-1] c.g.manuelarte.kafka.StarterProducer     : UserRegistered Sent: {"payload": {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}}
+2024-12-03T16:42:13.784+01:00  INFO 45015 --- [kafka-kotlin] [tlin-producer-1] c.g.manuelarte.kafka.StarterProducer     : UserEmailUpdated Sent: {"payload": {"id": 1, "email": "manuel@example.com"}}
+2024-12-03T16:42:13.797+01:00  INFO 45015 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received UserEvent: {"payload": {"id": 1, "name": "manuel", "username": "manuelarte", "email": "manuel@manuel.com"}}
+2024-12-03T16:42:13.797+01:00  INFO 45015 --- [kafka-kotlin] [        1-0-C-1] c.g.m.kafka.listeners.UserListener       : Received UserEvent: {"payload": {"id": 1, "email": "manuel@example.com"}}
 
 ```
 
