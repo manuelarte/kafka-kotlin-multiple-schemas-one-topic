@@ -1,7 +1,7 @@
 {
   "type": "record",
   "namespace": "com.github.manuelarte.kafka.avro",
-  "name": "User",
+  "name": "UserEvent",
   "doc": "User events",
   "fields": [
     {
@@ -10,8 +10,8 @@
       "type": [
         {
           "type": "record",
-          "name": "UserNew",
-          "doc": "New User",
+          "name": "UserRegisteredEvent",
+          "doc": "New user registered",
           "fields":[
             {
               "name": "id",
@@ -37,7 +37,7 @@
         },
         {
           "type": "record",
-          "name": "UserEmailUpdated",
+          "name": "UserEmailUpdatedEvent",
           "doc": "User updated his email",
           "fields":[
             {

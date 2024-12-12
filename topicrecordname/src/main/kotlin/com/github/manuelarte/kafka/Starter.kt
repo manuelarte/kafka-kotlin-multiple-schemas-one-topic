@@ -1,7 +1,7 @@
 package com.github.manuelarte.kafka
 
-import com.github.manuelarte.kafka.avro.UserEmailUpdated
-import com.github.manuelarte.kafka.avro.UserNew
+import com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent
+import com.github.manuelarte.kafka.avro.UserRegisteredEvent
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
@@ -32,20 +32,20 @@ class StarterProducer(
         .getLogger(StarterProducer::class.java)
 
     override fun start() {
-        UserNew(1, "manuel", "manuelarte", "manuel@manuel.com").also {
+        UserRegisteredEvent(1, "manuel", "manuelarte", "manuel@manuel.com").also {
             LOGGER.info("Sending new user: {}", it)
             val completeableFuture = this.kafkaTemplate.send(this.userTopic, it)
             completeableFuture.thenApply { result ->
-                LOGGER.info("New User Sent: {}", result.producerRecord.value())
+                LOGGER.info("UserRegistered Sent: {}", result.producerRecord.value())
             }
         }
 
 
-        UserEmailUpdated(1, "manuel@example.com").also {
+        UserEmailUpdatedEvent(1, "manuel@example.com").also {
             LOGGER.info("Sending user email updated: {}", it)
             val completeableFuture1 = this.kafkaTemplate.send(this.userTopic, it)
             completeableFuture1.thenApply { result ->
-                LOGGER.info("User Email Sent: {}", result.producerRecord.value())
+                LOGGER.info("UserEmailUpdated Sent: {}", result.producerRecord.value())
             }
         }
 

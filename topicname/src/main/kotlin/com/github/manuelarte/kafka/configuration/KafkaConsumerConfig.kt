@@ -1,6 +1,6 @@
 package com.github.manuelarte.kafka.configuration
 
-import com.github.manuelarte.kafka.avro.User
+import com.github.manuelarte.kafka.avro.UserEvent
 import io.confluent.kafka.serializers.KafkaAvroDeserializer
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig
 import io.confluent.kafka.serializers.subject.TopicNameStrategy
@@ -24,7 +24,7 @@ class KafkaConsumerConfig(
 ) {
 
     @Bean
-    fun consumerFactory(): ConsumerFactory<String, User> =
+    fun consumerFactory(): ConsumerFactory<String, UserEvent> =
         DefaultKafkaConsumerFactory(mapOf(
             Pair(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, this.bootstrapServers),
             Pair(ConsumerConfig.GROUP_ID_CONFIG, 0),
@@ -36,8 +36,8 @@ class KafkaConsumerConfig(
         ))
 
     @Bean
-    fun kafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<String, User> {
-        return ConcurrentKafkaListenerContainerFactory<String, User>().apply {
+    fun kafkaListenerContainerFactory(): ConcurrentKafkaListenerContainerFactory<String, UserEvent> {
+        return ConcurrentKafkaListenerContainerFactory<String, UserEvent>().apply {
                 consumerFactory = consumerFactory()
             }
     }

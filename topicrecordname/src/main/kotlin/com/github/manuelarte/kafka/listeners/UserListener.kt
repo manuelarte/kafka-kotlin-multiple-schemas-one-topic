@@ -1,7 +1,7 @@
 package com.github.manuelarte.kafka.listeners
 
-import com.github.manuelarte.kafka.avro.UserEmailUpdated
-import com.github.manuelarte.kafka.avro.UserNew
+import com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent
+import com.github.manuelarte.kafka.avro.UserRegisteredEvent
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.context.annotation.Profile
@@ -18,13 +18,13 @@ class UserListener {
         .getLogger(UserListener::class.java)
 
     @KafkaHandler
-    fun handleNew(userNew: UserNew) {
-        LOGGER.info("Received new User message: {}", userNew)
+    fun handleNew(userNew: UserRegisteredEvent) {
+        LOGGER.info("Received UserRegisteredEvent message: {}", userNew)
     }
 
     @KafkaHandler
-    fun handleUpdate(emailUpdated: UserEmailUpdated) {
-        LOGGER.info("Received User email updated message: {}", emailUpdated)
+    fun handleUpdate(emailUpdated: UserEmailUpdatedEvent) {
+        LOGGER.info("Received UserEmailUpdatedEvent message: {}", emailUpdated)
     }
 
 }

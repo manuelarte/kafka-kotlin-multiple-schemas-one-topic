@@ -13,26 +13,26 @@ import org.apache.avro.message.SchemaStore;
 
 /** User updated his email */
 @org.apache.avro.specific.AvroGenerated
-public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2272877622709465014L;
+public class UserEmailUpdatedEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -3263325722081050403L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserEmailUpdated\",\"namespace\":\"com.github.manuelarte.kafka.avro\",\"doc\":\"User updated his email\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"doc\":\"The id of the user\"},{\"name\":\"email\",\"type\":\"string\",\"doc\":\"The new email of the user\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserEmailUpdatedEvent\",\"namespace\":\"com.github.manuelarte.kafka.avro\",\"doc\":\"User updated his email\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"doc\":\"The id of the user\"},{\"name\":\"email\",\"type\":\"string\",\"doc\":\"The new email of the user\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<UserEmailUpdated> ENCODER =
+  private static final BinaryMessageEncoder<UserEmailUpdatedEvent> ENCODER =
       new BinaryMessageEncoder<>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<UserEmailUpdated> DECODER =
+  private static final BinaryMessageDecoder<UserEmailUpdatedEvent> DECODER =
       new BinaryMessageDecoder<>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<UserEmailUpdated> getEncoder() {
+  public static BinaryMessageEncoder<UserEmailUpdatedEvent> getEncoder() {
     return ENCODER;
   }
 
@@ -40,7 +40,7 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<UserEmailUpdated> getDecoder() {
+  public static BinaryMessageDecoder<UserEmailUpdatedEvent> getDecoder() {
     return DECODER;
   }
 
@@ -49,12 +49,12 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<UserEmailUpdated> createDecoder(SchemaStore resolver) {
+  public static BinaryMessageDecoder<UserEmailUpdatedEvent> createDecoder(SchemaStore resolver) {
     return new BinaryMessageDecoder<>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this UserEmailUpdated to a ByteBuffer.
+   * Serializes this UserEmailUpdatedEvent to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -63,12 +63,12 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
-   * Deserializes a UserEmailUpdated from a ByteBuffer.
+   * Deserializes a UserEmailUpdatedEvent from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a UserEmailUpdated instance decoded from the given buffer
+   * @return a UserEmailUpdatedEvent instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static UserEmailUpdated fromByteBuffer(
+  public static UserEmailUpdatedEvent fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -83,14 +83,14 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public UserEmailUpdated() {}
+  public UserEmailUpdatedEvent() {}
 
   /**
    * All-args constructor.
    * @param id The id of the user
    * @param email The new email of the user
    */
-  public UserEmailUpdated(java.lang.Integer id, java.lang.CharSequence email) {
+  public UserEmailUpdatedEvent(java.lang.Integer id, java.lang.CharSequence email) {
     this.id = id;
     this.email = email;
   }
@@ -159,45 +159,45 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
-   * Creates a new UserEmailUpdated RecordBuilder.
-   * @return A new UserEmailUpdated RecordBuilder
+   * Creates a new UserEmailUpdatedEvent RecordBuilder.
+   * @return A new UserEmailUpdatedEvent RecordBuilder
    */
-  public static com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder newBuilder() {
-    return new com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder();
+  public static com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder newBuilder() {
+    return new com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder();
   }
 
   /**
-   * Creates a new UserEmailUpdated RecordBuilder by copying an existing Builder.
+   * Creates a new UserEmailUpdatedEvent RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new UserEmailUpdated RecordBuilder
+   * @return A new UserEmailUpdatedEvent RecordBuilder
    */
-  public static com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder newBuilder(com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder other) {
+  public static com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder newBuilder(com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder other) {
     if (other == null) {
-      return new com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder();
+      return new com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder();
     } else {
-      return new com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder(other);
+      return new com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder(other);
     }
   }
 
   /**
-   * Creates a new UserEmailUpdated RecordBuilder by copying an existing UserEmailUpdated instance.
+   * Creates a new UserEmailUpdatedEvent RecordBuilder by copying an existing UserEmailUpdatedEvent instance.
    * @param other The existing instance to copy.
-   * @return A new UserEmailUpdated RecordBuilder
+   * @return A new UserEmailUpdatedEvent RecordBuilder
    */
-  public static com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder newBuilder(com.github.manuelarte.kafka.avro.UserEmailUpdated other) {
+  public static com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder newBuilder(com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent other) {
     if (other == null) {
-      return new com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder();
+      return new com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder();
     } else {
-      return new com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder(other);
+      return new com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for UserEmailUpdated instances.
+   * RecordBuilder for UserEmailUpdatedEvent instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<UserEmailUpdated>
-    implements org.apache.avro.data.RecordBuilder<UserEmailUpdated> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<UserEmailUpdatedEvent>
+    implements org.apache.avro.data.RecordBuilder<UserEmailUpdatedEvent> {
 
     /** The id of the user */
     private int id;
@@ -213,7 +213,7 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder other) {
+    private Builder(com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -226,10 +226,10 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
     }
 
     /**
-     * Creates a Builder by copying an existing UserEmailUpdated instance
+     * Creates a Builder by copying an existing UserEmailUpdatedEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.github.manuelarte.kafka.avro.UserEmailUpdated other) {
+    private Builder(com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -257,7 +257,7 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder setId(int value) {
+    public com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -279,7 +279,7 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
       * The id of the user
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder clearId() {
+    public com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -300,7 +300,7 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder setEmail(java.lang.CharSequence value) {
+    public com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder setEmail(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.email = value;
       fieldSetFlags()[1] = true;
@@ -322,7 +322,7 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
       * The new email of the user
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserEmailUpdated.Builder clearEmail() {
+    public com.github.manuelarte.kafka.avro.UserEmailUpdatedEvent.Builder clearEmail() {
       email = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -330,9 +330,9 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
 
     @Override
     @SuppressWarnings("unchecked")
-    public UserEmailUpdated build() {
+    public UserEmailUpdatedEvent build() {
       try {
-        UserEmailUpdated record = new UserEmailUpdated();
+        UserEmailUpdatedEvent record = new UserEmailUpdatedEvent();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.email = fieldSetFlags()[1] ? this.email : (java.lang.CharSequence) defaultValue(fields()[1]);
         return record;
@@ -345,8 +345,8 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<UserEmailUpdated>
-    WRITER$ = (org.apache.avro.io.DatumWriter<UserEmailUpdated>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<UserEmailUpdatedEvent>
+    WRITER$ = (org.apache.avro.io.DatumWriter<UserEmailUpdatedEvent>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -354,8 +354,8 @@ public class UserEmailUpdated extends org.apache.avro.specific.SpecificRecordBas
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<UserEmailUpdated>
-    READER$ = (org.apache.avro.io.DatumReader<UserEmailUpdated>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<UserEmailUpdatedEvent>
+    READER$ = (org.apache.avro.io.DatumReader<UserEmailUpdatedEvent>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

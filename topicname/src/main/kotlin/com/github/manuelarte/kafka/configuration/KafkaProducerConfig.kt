@@ -1,6 +1,6 @@
 package com.github.manuelarte.kafka.configuration
 
-import com.github.manuelarte.kafka.avro.User
+import com.github.manuelarte.kafka.avro.UserEvent
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig
 import io.confluent.kafka.serializers.KafkaAvroSerializer
 import io.confluent.kafka.serializers.subject.TopicNameStrategy
@@ -21,7 +21,7 @@ class KafkaProducerConfig(
     @Value("\${spring.kafka.bootstrap-servers}") val bootstrapServers: String,
 ) {
     @Bean
-    fun producerFactory(): ProducerFactory<String, User> =
+    fun producerFactory(): ProducerFactory<String, UserEvent> =
         DefaultKafkaProducerFactory(mapOf(
             Pair(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, this.bootstrapServers),
             Pair(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer::class.java),
@@ -33,7 +33,7 @@ class KafkaProducerConfig(
         ))
 
     @Bean
-    fun kafkaTemplate(): KafkaTemplate<String, User> {
+    fun kafkaTemplate(): KafkaTemplate<String, UserEvent> {
         return KafkaTemplate(producerFactory())
     }
 }

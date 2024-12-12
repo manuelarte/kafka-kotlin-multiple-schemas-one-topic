@@ -11,28 +11,28 @@ import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
-/** New User */
+/** New user registered */
 @org.apache.avro.specific.AvroGenerated
-public class UserNew extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -945809911126923471L;
+public class UserRegisteredEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 7587451172040003685L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserNew\",\"namespace\":\"com.github.manuelarte.kafka.avro\",\"doc\":\"New User\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"doc\":\"The id of the user\"},{\"name\":\"name\",\"type\":\"string\",\"doc\":\"The name of a service instance\"},{\"name\":\"username\",\"type\":\"string\",\"doc\":\"The username of the user\"},{\"name\":\"email\",\"type\":\"string\",\"doc\":\"The email of the user\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UserRegisteredEvent\",\"namespace\":\"com.github.manuelarte.kafka.avro\",\"doc\":\"New user registered\",\"fields\":[{\"name\":\"id\",\"type\":\"int\",\"doc\":\"The id of the user\"},{\"name\":\"name\",\"type\":\"string\",\"doc\":\"The name of a service instance\"},{\"name\":\"username\",\"type\":\"string\",\"doc\":\"The username of the user\"},{\"name\":\"email\",\"type\":\"string\",\"doc\":\"The email of the user\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<UserNew> ENCODER =
+  private static final BinaryMessageEncoder<UserRegisteredEvent> ENCODER =
       new BinaryMessageEncoder<>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<UserNew> DECODER =
+  private static final BinaryMessageDecoder<UserRegisteredEvent> DECODER =
       new BinaryMessageDecoder<>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<UserNew> getEncoder() {
+  public static BinaryMessageEncoder<UserRegisteredEvent> getEncoder() {
     return ENCODER;
   }
 
@@ -40,7 +40,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<UserNew> getDecoder() {
+  public static BinaryMessageDecoder<UserRegisteredEvent> getDecoder() {
     return DECODER;
   }
 
@@ -49,12 +49,12 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<UserNew> createDecoder(SchemaStore resolver) {
+  public static BinaryMessageDecoder<UserRegisteredEvent> createDecoder(SchemaStore resolver) {
     return new BinaryMessageDecoder<>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this UserNew to a ByteBuffer.
+   * Serializes this UserRegisteredEvent to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -63,12 +63,12 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   /**
-   * Deserializes a UserNew from a ByteBuffer.
+   * Deserializes a UserRegisteredEvent from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a UserNew instance decoded from the given buffer
+   * @return a UserRegisteredEvent instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static UserNew fromByteBuffer(
+  public static UserRegisteredEvent fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -87,7 +87,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public UserNew() {}
+  public UserRegisteredEvent() {}
 
   /**
    * All-args constructor.
@@ -96,7 +96,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param username The username of the user
    * @param email The email of the user
    */
-  public UserNew(java.lang.Integer id, java.lang.CharSequence name, java.lang.CharSequence username, java.lang.CharSequence email) {
+  public UserRegisteredEvent(java.lang.Integer id, java.lang.CharSequence name, java.lang.CharSequence username, java.lang.CharSequence email) {
     this.id = id;
     this.name = name;
     this.username = username;
@@ -207,45 +207,45 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   /**
-   * Creates a new UserNew RecordBuilder.
-   * @return A new UserNew RecordBuilder
+   * Creates a new UserRegisteredEvent RecordBuilder.
+   * @return A new UserRegisteredEvent RecordBuilder
    */
-  public static com.github.manuelarte.kafka.avro.UserNew.Builder newBuilder() {
-    return new com.github.manuelarte.kafka.avro.UserNew.Builder();
+  public static com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder newBuilder() {
+    return new com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder();
   }
 
   /**
-   * Creates a new UserNew RecordBuilder by copying an existing Builder.
+   * Creates a new UserRegisteredEvent RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new UserNew RecordBuilder
+   * @return A new UserRegisteredEvent RecordBuilder
    */
-  public static com.github.manuelarte.kafka.avro.UserNew.Builder newBuilder(com.github.manuelarte.kafka.avro.UserNew.Builder other) {
+  public static com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder newBuilder(com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder other) {
     if (other == null) {
-      return new com.github.manuelarte.kafka.avro.UserNew.Builder();
+      return new com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder();
     } else {
-      return new com.github.manuelarte.kafka.avro.UserNew.Builder(other);
+      return new com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder(other);
     }
   }
 
   /**
-   * Creates a new UserNew RecordBuilder by copying an existing UserNew instance.
+   * Creates a new UserRegisteredEvent RecordBuilder by copying an existing UserRegisteredEvent instance.
    * @param other The existing instance to copy.
-   * @return A new UserNew RecordBuilder
+   * @return A new UserRegisteredEvent RecordBuilder
    */
-  public static com.github.manuelarte.kafka.avro.UserNew.Builder newBuilder(com.github.manuelarte.kafka.avro.UserNew other) {
+  public static com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder newBuilder(com.github.manuelarte.kafka.avro.UserRegisteredEvent other) {
     if (other == null) {
-      return new com.github.manuelarte.kafka.avro.UserNew.Builder();
+      return new com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder();
     } else {
-      return new com.github.manuelarte.kafka.avro.UserNew.Builder(other);
+      return new com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for UserNew instances.
+   * RecordBuilder for UserRegisteredEvent instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<UserNew>
-    implements org.apache.avro.data.RecordBuilder<UserNew> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<UserRegisteredEvent>
+    implements org.apache.avro.data.RecordBuilder<UserRegisteredEvent> {
 
     /** The id of the user */
     private int id;
@@ -265,7 +265,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.github.manuelarte.kafka.avro.UserNew.Builder other) {
+    private Builder(com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -286,10 +286,10 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
     }
 
     /**
-     * Creates a Builder by copying an existing UserNew instance
+     * Creates a Builder by copying an existing UserRegisteredEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.github.manuelarte.kafka.avro.UserNew other) {
+    private Builder(com.github.manuelarte.kafka.avro.UserRegisteredEvent other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -325,7 +325,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder setId(int value) {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -347,7 +347,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * The id of the user
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder clearId() {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -368,7 +368,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder setName(java.lang.CharSequence value) {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -390,7 +390,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * The name of a service instance
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder clearName() {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -412,7 +412,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'username'.
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder setUsername(java.lang.CharSequence value) {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder setUsername(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.username = value;
       fieldSetFlags()[2] = true;
@@ -434,7 +434,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * The username of the user
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder clearUsername() {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder clearUsername() {
       username = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -456,7 +456,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder setEmail(java.lang.CharSequence value) {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder setEmail(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.email = value;
       fieldSetFlags()[3] = true;
@@ -478,7 +478,7 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
       * The email of the user
       * @return This builder.
       */
-    public com.github.manuelarte.kafka.avro.UserNew.Builder clearEmail() {
+    public com.github.manuelarte.kafka.avro.UserRegisteredEvent.Builder clearEmail() {
       email = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -486,9 +486,9 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
 
     @Override
     @SuppressWarnings("unchecked")
-    public UserNew build() {
+    public UserRegisteredEvent build() {
       try {
-        UserNew record = new UserNew();
+        UserRegisteredEvent record = new UserRegisteredEvent();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.username = fieldSetFlags()[2] ? this.username : (java.lang.CharSequence) defaultValue(fields()[2]);
@@ -503,8 +503,8 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<UserNew>
-    WRITER$ = (org.apache.avro.io.DatumWriter<UserNew>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<UserRegisteredEvent>
+    WRITER$ = (org.apache.avro.io.DatumWriter<UserRegisteredEvent>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -512,8 +512,8 @@ public class UserNew extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<UserNew>
-    READER$ = (org.apache.avro.io.DatumReader<UserNew>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<UserRegisteredEvent>
+    READER$ = (org.apache.avro.io.DatumReader<UserRegisteredEvent>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
