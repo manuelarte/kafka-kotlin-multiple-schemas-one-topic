@@ -2,7 +2,7 @@ plugins {
 	kotlin("jvm") version "2.1.0"
 	kotlin("plugin.spring") version "2.1.0"
 	id("org.springframework.boot") version "3.4.1"
-	id("io.spring.dependency-management") version "1.1.6"
+	id("io.spring.dependency-management") version "1.1.7"
 	//id("com.github.davidmc24.gradle.plugin.avro") version "1.9.1"
 	//id("com.github.imflog.kafka-schema-registry-gradle-plugin") version "2.1.1"
 
