@@ -43,7 +43,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.kafka:spring-kafka")
 	implementation("org.apache.avro:avro:1.12.0")
-	implementation("io.confluent:kafka-avro-serializer:7.9.1")
+	implementation("io.confluent:kafka-avro-serializer:8.0.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
